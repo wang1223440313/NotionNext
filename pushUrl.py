@@ -80,6 +80,11 @@ if __name__ == '__main__':
         # 解析urls
         urls = parse_stiemap(args.url)
         if urls is not None:
+            print('解析sitemap.xml成功，共找到', len(urls), '个链接。')
+            print('开始推送，请稍后……')
+            # 打印所有 urls
+            for url in urls:
+                print(url)
             # 判断当前urls数量是否超过额度，若超过则取当日最大值，默认为100，可根据实际情况修改
             if len(urls) > QUOTA:
                 urls = random.sample(urls, QUOTA)
