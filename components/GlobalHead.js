@@ -37,6 +37,12 @@ const GlobalHead = props => {
     NOTION_CONFIG
   )
 
+  const SEO_BYTEDANCE_SITE_VERIFICATION = siteConfig(
+    'SEO_BYTEDANCE_SITE_VERIFICATION',
+    null,
+    NOTION_CONFIG,
+  )
+
   const SEO_GOOGLE_SITE_VERIFICATION = siteConfig(
     'SEO_GOOGLE_SITE_VERIFICATION',
     null,
@@ -110,7 +116,7 @@ const GlobalHead = props => {
           content={SEO_GOOGLE_SITE_VERIFICATION}
         />
       )}
-      {siteConfig('SEO_BYTEDANCE_SITE_VERIFICATION') && (
+      {SEO_BYTEDANCE_SITE_VERIFICATION && (
         <meta
           name='bytedance-verification-code'
           content={siteConfig('SEO_BYTEDANCE_SITE_VERIFICATION')}
