@@ -110,6 +110,12 @@ const GlobalHead = props => {
           content={SEO_GOOGLE_SITE_VERIFICATION}
         />
       )}
+      {siteConfig('SEO_BYTEDANCE_SITE_VERIFICATION') && (
+        <meta
+          name='bytedance-verification-code'
+          content={siteConfig('SEO_BYTEDANCE_SITE_VERIFICATION')}
+        />
+      )}
       {SEO_BAIDU_SITE_VERIFICATION && (
         <meta
           name='baidu-site-verification'
