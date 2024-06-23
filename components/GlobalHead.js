@@ -49,6 +49,12 @@ const GlobalHead = props => {
     NOTION_CONFIG
   )
 
+  const SEO_SOUGOU_SITE_VERIFICATION = siteConfig(
+    'SEO_SOUGOU_SITE_VERIFICATION',
+    null,
+    NOTION_CONFIG
+  )
+
   const BLOG_FAVICON = siteConfig('BLOG_FAVICON', null, NOTION_CONFIG)
 
   const COMMENT_WEBMENTION_ENABLE = siteConfig(
@@ -116,10 +122,18 @@ const GlobalHead = props => {
           content={SEO_GOOGLE_SITE_VERIFICATION}
         />
       )}
+      {
+        SEO_SOUGOU_SITE_VERIFICATION && (
+          <meta
+            name='sogou_site_verification'
+            content={SEO_SOUGOU_SITE_VERIFICATION}
+          />
+        )
+      }
       {SEO_BYTEDANCE_SITE_VERIFICATION && (
         <meta
           name='bytedance-verification-code'
-          content={siteConfig('SEO_BYTEDANCE_SITE_VERIFICATION')}
+          content={SEO_BYTEDANCE_SITE_VERIFICATION}
         />
       )}
       {SEO_BAIDU_SITE_VERIFICATION && (
